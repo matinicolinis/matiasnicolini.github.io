@@ -1,0 +1,101 @@
+@import url("css/style.css");
+:root{
+  --bg: #0f1115;
+  --surface: #151922;
+  --surface-2: #1c2230;
+  --text: #e9eef6;
+  --muted: #a7b0be;
+  --border: rgba(255,255,255,0.08);
+  --accent: #b100e8;      /* tu magenta */
+  --accent-2: #00b3ff;    /* opcional: azul tech para hover */
+}
+
+/* Base */
+body{
+  background: var(--bg);
+  color: var(--text);
+}
+
+a{ color: var(--accent); }
+a:hover{ color: #d15bff; text-decoration: none; }
+
+/* Navbar */
+.navbar{
+  background: rgba(10,12,16,0.92) !important;
+  border-bottom: 1px solid var(--border);
+}
+
+/* “chip” detrás del logo */
+.navbar-brand{
+  display: flex;
+  align-items: center;
+  padding: 6px 10px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid var(--border);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+}
+
+.navbar-brand img{
+  height: 44px;   /* ajusta 36–52 */
+  width: auto;
+  object-fit: contain;
+}
+
+/* Links navbar */
+.navbar-dark .navbar-nav .nav-link{
+  color: rgba(233,238,246,0.82);
+}
+.navbar-dark .navbar-nav .nav-link:hover{
+  color: var(--text);
+}
+.navbar-dark .navbar-nav .active > .nav-link{
+  color: var(--text);
+}
+
+/* Jumbotron hero */
+.jumbotron{
+  background: radial-gradient(1200px 600px at 50% -20%, rgba(177,0,232,0.22), transparent 60%),
+              linear-gradient(180deg, rgba(21,25,34,0.9), rgba(15,17,21,0.9));
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  color: var(--text);
+}
+
+.jumbotron p{
+  color: var(--muted);
+}
+
+/* Botones */
+.btn-primary{
+  background: var(--accent);
+  border-color: var(--accent);
+}
+.btn-primary:hover{
+  background: #d15bff;
+  border-color: #d15bff;
+}
+
+/* Secciones / contenedores */
+section .container{
+  color: var(--text);
+}
+
+hr{
+  border-top: 1px solid var(--border);
+}
+
+/* Tarjetas/blocks si usas */
+.card, .media{
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+
+/* Carousel: captions legibles */
+.carousel-caption{
+  background: rgba(0,0,0,0.45);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 12px;
+  padding: 10px 12px;
+}

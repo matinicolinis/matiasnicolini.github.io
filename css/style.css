@@ -1,0 +1,196 @@
+/* =========================================================
+   GLOBAL THEME TOKENS (CSS variables)
+   ---------------------------------------------------------
+   Centralized colors so you can tweak the whole site fast.
+   ========================================================= */
+:root{
+  --bg: #0f1111;
+  --surface: #151922;
+  --surface-2: #1c2230;
+  --text: #e9eef6;
+  --muted: #a7b0be;
+  --border: rgba(255,255,255,0.08);
+  --accent: #b100e8;    /* brand magenta */
+  --accent-2: #00b3ff;  /* optional tech-blue for hover */
+}
+
+/* =========================================================
+   BASE TYPOGRAPHY + PAGE DEFAULTS
+   ---------------------------------------------------------
+   Set the global font once and let everything inherit it.
+   ========================================================= */
+html{
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  font-size: 16px;
+}
+
+body{
+  background: var(--bg);
+  color: var(--text);
+  font-family: inherit;
+  line-height: 1.6;
+}
+
+/* Make form controls match the site font (Bootstrap can vary) */
+button, input, textarea, select{
+  font-family: inherit;
+}
+
+/* Links */
+a{
+  color: var(--accent);
+}
+a:hover{
+  color: #d15bff;
+  text-decoration: none;
+}
+
+/* =========================================================
+   NAVBAR (glass style)
+   ---------------------------------------------------------
+   - Keeps the logo on the left
+   - Centers the menu items via .nav-center (absolute)
+   ========================================================= */
+.navbar{
+  background: rgba(245,245,247,0.82) !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+
+  display: flex;
+  align-items: center;
+}
+
+/* Logo wrapper (left aligned) */
+.logo-wrap{
+  text-align: left;
+}
+
+/* Centered nav menu (desktop layout) */
+.nav-center{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+
+  display: flex;
+  align-items: center;
+  gap: 40px; /* spacing between menu items */
+}
+
+/* Nav links styling */
+.nav-center .nav-link{
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.90rem;
+  font-weight: 500;
+  padding: 0;
+  color: rgba(15,17,17,0.7);
+}
+.nav-center .nav-link:hover{
+  color: #0f1111;
+}
+
+/* =========================================================
+   HERO / JUMBOTRON
+   ---------------------------------------------------------
+   Dark background with subtle magenta glow.
+   ========================================================= */
+.jumbotron{
+  background:
+    radial-gradient(1200px 600px at 50% -20%, rgba(177,0,232,0.22), transparent 60%),
+    linear-gradient(180deg, rgba(21,25,34,0.9), rgba(15,17,21,0.9));
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  color: var(--text);
+}
+
+.jumbotron p{
+  color: var(--muted);
+}
+
+/* Optional helper if you later wrap hero text in .hero-text */
+.hero-text{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: -16px; /* nudges hero text upward */
+}
+
+.hero-text h1{
+  margin: 0;
+  font-size: 2.2rem;
+  font-weight: 600;
+}
+
+.hero-text p{
+  margin: 4px 0 0;
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  color: #6b7280;
+}
+
+/* =========================================================
+   BUTTONS (Bootstrap overrides)
+   ========================================================= */
+.btn-primary{
+  background: var(--accent);
+  border-color: var(--accent);
+}
+.btn-primary:hover{
+  background: #d15bff;
+  border-color: #d15bff;
+}
+
+/* =========================================================
+   SECTIONS / DIVIDERS
+   ========================================================= */
+section .container{
+  color: var(--text);
+}
+
+hr{
+  border-top: 1px solid var(--border);
+}
+
+/* =========================================================
+   CARDS / CONTENT BLOCKS (if you use them)
+   ========================================================= */
+.card, .media{
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+
+/* =========================================================
+   CAROUSEL CAPTIONS
+   ---------------------------------------------------------
+   Improves readability on top of videos/images.
+   ========================================================= */
+.carousel-caption{
+  background: rgba(0,0,0,0.45);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 0px;
+  padding: 10px 12px;
+}
+
+/* others */
+.crafted-note{
+  margin-top: 12px;
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+
+  color: var(--muted);
+  opacity: 0.7;
+}
+
+.matiasn{
+  position: relative;
+}
+
+.matiasn{
+  font-family: 'Sora', 'Inter', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+

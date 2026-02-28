@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	  <!-- FONTS -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@500;600;700&display=swap" rel="stylesheet">
+
+
+
+	
+	
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap Portfolio Page Template</title>
+
+  <!-- Bootstrap 4 -->
+  <link href="css/bootstrap-4.4.1.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+	
+	  <!-- TOP BAR NAV-->
+	<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+	<!-- LOGO -->
+			<div class="logo-wrap">
+			<img src="images/logo F2.png" width="auto" height="90" alt=""/>	
+							
+			</div>
+		<ul class="navbar-nav nav-center">
+  <li class="nav-item"><a class="nav-link" href="#home">HOME</a></li>
+  <li class="nav-item"><a class="nav-link" href="#projects">PROJECTS</a></li>
+  <li class="nav-item"><a class="nav-link" href="#about">ABOUT</a></li>
+  <li class="nav-item"><a class="nav-link" href="#contact">CONTACT</a></li>
+  <li class="nav-item"><a class="nav-link" href="#support">SUPPORT</a></li>
+</ul>
+</nav>
+	
+
+ 
+
+<!-- JUMBOTRON -->
+<section>
+  <div class="jumbotron text-center mt-2">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+			
+			<br>
+			<br>
+			<br>
+			<br>
+			  <!-- TITLE - SUB TITLE (NAME) -->
+          <h1 class="matiasn">MATIAS NICOLINI</h1>
+          <p>GAME DESIGN &amp; MULTIMEDIA</p>
+        
+
+          <!-- CAROUSEL -->
+          <div id="carouselExampleIndicators1"
+               class="carousel slide"
+               data-ride="carousel"
+               data-interval="false">
+
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+              <li data-target="#carouselExampleIndicators1" data-slide-to="0" class="active"></li>
+              <li data-target="#carouselExampleIndicators1" data-slide-to="1"></li>
+              <li data-target="#carouselExampleIndicators1" data-slide-to="2"></li>
+            </ol>
+
+            <!-- Slides -->
+            <div class="carousel-inner" role="listbox">
+
+              <div class="carousel-item active">
+                <video class="d-block mx-auto w-75" muted playsinline preload="metadata">
+                  <source src="video1.mp4" type="video/mp4">
+			    </video>
+                <div class="carousel-caption">
+                  <h5>TEAM PROJECT&nbsp;</h5>
+                  <p>Game Design - Level Design - Narrative Design</p>
+                </div>
+              </div>
+
+              <div class="carousel-item">
+                <video class="d-block mx-auto w-75" muted playsinline preload="metadata">
+                  <source src="video2.mp4" type="video/mp4">
+                </video>
+                <div class="carousel-caption">
+                  <h5>TEAM PROJECT</h5>
+                  <p>Game Design - Level Design - Narrative Design</p>
+                </div>
+              </div>
+
+              <div class="carousel-item">
+                <video class="d-block mx-auto w-75" muted playsinline preload="metadata">
+                  <source src="video3.mp4" type="video/mp4">
+                </video>
+                <div class="carousel-caption">
+                  <h5>TEAM PROJECT</h5>
+                  <p>Game Design Jr</p>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Controls -->
+            <a class="carousel-control-prev" href="#carouselExampleIndicators1" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+
+            <a class="carousel-control-next" href="#carouselExampleIndicators1" role="button" data-slide="next">
+              <span class="carousel-control-next-icon"></span>
+              <span class="sr-only">Next</span>
+            </a>
+
+
+          </div>
+          <!-- /CAROUSEL -->
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOTTON PART -->
+<section>
+  <div class="container text-center">
+    <h1>View all projects</h1>
+    <p class="crafted-note">Hand-crafted website built with HTML, CSS and JavaScript</p>
+    <p>Thanks for your visit!&nbsp;</p>
+  </div>
+</section>
+
+<hr>
+
+<!-- FOOTER -->
+<footer class="text-center">
+  <div class="container">
+    <p>Copyright © MatinicoliniD. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- JS -->
+<script src="js/jquery-3.4.1.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap-4.4.1.js"></script>
+
+<script>
+  $(function () {
+    var $carousel = $('#carouselExampleIndicators1');
+
+    function playActiveVideo() {
+      $carousel.find('video').each(function () {
+        this.pause();
+        this.currentTime = 0;
+        this.onended = null;
+      });
+
+      var activeVideo = $carousel.find('.carousel-item.active video').get(0);
+      if (!activeVideo) return;
+
+      var p = activeVideo.play();
+      if (p && p.catch) {
+        p.catch(() => console.warn('Autoplay blocked'));
+      }
+
+      activeVideo.onended = function () {
+        $carousel.carousel('next');
+      };
+    }
+
+    $carousel.on('slid.bs.carousel', playActiveVideo);
+    playActiveVideo();
+  });
+</script>
+
+</body>
+</html>
